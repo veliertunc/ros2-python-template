@@ -15,7 +15,7 @@ The folders and files should contain the following:
 * `map/`: Map files. Ex: PGM files
 * `models/`: SDF model files.
 * `rviz/`: RVIZ configuration files.
-* `scripts/`: Other Python scripts.
+* `script/`: Other Python scripts.
 * `urdf/`: URDF descriptions
 * `worlds/`: Gazebo world files
 * `CHANGELOG.md`: The log of the changes in chronological order
@@ -67,9 +67,11 @@ Append the lines *after* the triple dots(...) to the **data_files** in **setup.p
 		(os.path.join('share', package_name, 'models'), glob(os.path.join('models', '/**/*.config'))),
 		#Include RVIZ configuration files
 		(os.path.join('share', package_name, 'rviz'), glob(os.path.join('rviz', '/**/*.rviz'))),
-		# Include all map files.
+		# Include custom Python scripts
+		(os.path.join('share', package_name, 'script'), glob(os.path.join('script', '/**/*.[pxy][yma]*'))),
+		# Include all URDF files.
 		(os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '/**/*.urdf'))),
-		# Include all map files.
+		# Include all world files.
 		(os.path.join('share', package_name, 'worlds'), glob(os.path.join('worlds', '/**/*.world'))),
 
 	],
